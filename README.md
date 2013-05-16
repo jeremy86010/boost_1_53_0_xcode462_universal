@@ -5,10 +5,10 @@ Patch files to enable you to compile universal binary libraries with clang, gcc 
 
 
 ### apply a patch
-#from https://svn.boost.org/trac/boost/ticket/8266
+###from https://svn.boost.org/trac/boost/ticket/8266
 mv [patch-libs-context-130308-0.diff] boost_1_53_0/.
 
-#from http://github.com/toolbits/boost_1_53_0_xcode462_universal
+###from http://github.com/toolbits/boost_1_53_0_xcode462_universal
 mv [Jamfile.v2] boost_1_53_0/.
 
 cd boost_1_53_0
