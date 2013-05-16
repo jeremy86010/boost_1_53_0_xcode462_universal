@@ -1,9 +1,12 @@
 boost_1_53_0_xcode462_universal
 ===============================
 
-Patch files to enable you to compile universal binary libraries with clang, gcc under xcode 4.6.2.
-This modification is not tested completely yet.
-Tested only in compile.
+Patch files to enable you to compile universal binary libraries with clang, gcc under xcode 4.6.2.<br/>
+This modification is not tested completely yet.<br/>
+Only compile test was done.<br/>
+
+I'm glad if someone tests everything and posts this to boost's official.<br/>
+
 
 
 ### apply a patch
