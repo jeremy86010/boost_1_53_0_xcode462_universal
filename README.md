@@ -9,7 +9,7 @@ I'm glad if someone tests everything and posts this to boost's official.<br/>
 
 
 
-### apply a patch
+### apply three patches
 ### from https://svn.boost.org/trac/boost/ticket/8266
 mv [patch-libs-context-130308-0.diff] boost_1_53_0/.
 
@@ -22,8 +22,8 @@ mv [clang-darwin.jam] boost_1_53_0/.
 cd boost_1_53_0
 
 patch -up0 < patch-libs-context-130308-0.diff<br/>
-mv Jamfile.v2 libs/context/build/.
-mv clang-darwin.jam tools/build/v2/tools/.
+mv Jamfile.v2 libs/context/build/.<br/>
+mv clang-darwin.jam tools/build/v2/tools/.<br/>
 
 
 
