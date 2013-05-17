@@ -409,10 +409,10 @@ alias asm_context_sources
    ;
 
 alias asm_context_sources
-   : [ make asm/make_i386_x86_64_sysv_macho_gas_i386.o : asm/make_i386_x86_64_sysv_macho_gas.S : @gas_i386 ]
-     [ make asm/jump_i386_x86_64_sysv_macho_gas_i386.o : asm/jump_i386_x86_64_sysv_macho_gas.S : @gas_i386 ]
-     [ make asm/make_i386_x86_64_sysv_macho_gas_x86_64.o : asm/make_i386_x86_64_sysv_macho_gas.S : @gas_x86_64 ]
-     [ make asm/jump_i386_x86_64_sysv_macho_gas_x86_64.o : asm/jump_i386_x86_64_sysv_macho_gas.S : @gas_x86_64 ]
+   : [ make asm/make_i386_x86_64_sysv_macho_gas_i386.o : asm/make_i386_sysv_macho_gas.S : @gas_i386 ]
+     [ make asm/jump_i386_x86_64_sysv_macho_gas_i386.o : asm/jump_i386_sysv_macho_gas.S : @gas_i386 ]
+     [ make asm/make_i386_x86_64_sysv_macho_gas_x86_64.o : asm/make_x86_64_sysv_macho_gas.S : @gas_x86_64 ]
+     [ make asm/jump_i386_x86_64_sysv_macho_gas_x86_64.o : asm/jump_x86_64_sysv_macho_gas.S : @gas_x86_64 ]
    : <address-model>32_64
      <architecture>x86
      <binary-format>mach-o

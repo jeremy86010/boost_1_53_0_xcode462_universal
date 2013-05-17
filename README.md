@@ -31,8 +31,8 @@ mv clang-darwin.jam tools/build/v2/tools/.<br/>
 sudo rm -rf /usr/local/boost_clang
 
 ./bootstrap.sh --with-toolset=clang --prefix=/usr/local/boost_clang<br/>
-./b2 toolset=clang architecture=x86 address-model=32_64 cxxflags="-std=c++11 -stdlib=libc++" linkflags="-stdlib=libc++" threading=multi<br/>
-sudo ./b2 install toolset=clang architecture=x86 address-model=32_64 cxxflags="-std=c++11 -stdlib=libc++" linkflags="-stdlib=libc++" threading=multi<br/>
+./b2 toolset=clang architecture=x86 address-model=32_64 cxxflags="-std=c++11 -stdlib=libc++" linkflags="-stdlib=libc++" threading=multi pch=off<br/>
+sudo ./b2 install toolset=clang architecture=x86 address-model=32_64 cxxflags="-std=c++11 -stdlib=libc++" linkflags="-stdlib=libc++" threading=multi pch=off<br/>
 
 sudo mkdir /usr/local/boost_clang/lib/a<br/>
 sudo mkdir /usr/local/boost_clang/lib/dylib<br/>
@@ -45,8 +45,8 @@ sudo mv /usr/local/boost_clang/lib/*.dylib /usr/local/boost_clang/lib/dylib/.<br
 sudo rm -rf /usr/local/boost_gcc
 
 ./bootstrap.sh --with-toolset=darwin --prefix=/usr/local/boost_gcc<br/>
-./b2 toolset=darwin architecture=x86 address-model=32_64 threading=multi<br/>
-sudo ./b2 install toolset=darwin architecture=x86 address-model=32_64 threading=multi<br/>
+./b2 toolset=darwin architecture=x86 address-model=32_64 threading=multi pch=off<br/>
+sudo ./b2 install toolset=darwin architecture=x86 address-model=32_64 threading=multi pch=off<br/>
 
 sudo mkdir /usr/local/boost_gcc/lib/a<br/>
 sudo mkdir /usr/local/boost_gcc/lib/dylib<br/>

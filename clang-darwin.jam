@@ -71,6 +71,16 @@ rule init ( version ? :  command * : options * )
 
     gcc.init-link-flags clang-darwin darwin $(condition) ;
 
+    # - The archive builder (libtool is the default as creating
+    #   archives in darwin is complicated.
+    local archiver =
+        [ common.get-invocation-command clang-darwin
+            : libtool : [ feature.get-values <archiver> : $(options) ] : $(bin) : search-path ] ;
+    flags clang-darwin.archive .LIBTOOL $(condition) : $(archiver[1]) ;
+    if $(.debug-configuration)
+    {
+        ECHO notice: using archiver for $(condition) at $(archiver[1]) ;
+    }
 }
 
 SPACE = " " ;
@@ -155,8 +165,9 @@ rule archive ( targets * : sources * : properties * )
 
 actions piecemeal archive
 {
-  "$(.AR)" $(AROPTIONS) rc "$(<)" "$(>)"
-  "ranlib" -cs "$(<)"
+  "$(.LIBTOOL)" -static -o "$(<:T)"  $(ARFLAGS)  "$(>:T)"
+#  "$(.AR)" $(AROPTIONS) rc "$(<)" "$(>)"
+#  "ranlib" -cs "$(<)"
 }
 
 flags clang-darwin.link USER_OPTIONS <linkflags> ;
