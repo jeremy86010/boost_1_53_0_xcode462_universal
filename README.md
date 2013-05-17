@@ -7,6 +7,14 @@ Only compile test was done.<br/>
 
 I'm glad if someone tests everything and posts this to boost's official.<br/>
 
+### development environment:
+
+o MacOS X 10.7.5<br/>
+o Xcode 4.6.2<br/>
+o clang = Apple LLVM version 4.2 (clang-425.0.28) (based on LLVM 3.2svn)<br/>
+o gcc = i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)<br/>
+o boost_1_53_0<br/>
+
 
 
 ### apply three patches
