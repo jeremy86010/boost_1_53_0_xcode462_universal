@@ -3,10 +3,13 @@
 mv [patch-libs-context-130308-0.diff] boost_1_53_0/.
 #from http://github.com/toolbits/boost_1_53_0_xcode462_universal
 mv [Jamfile.v2] boost_1_53_0/.
+#from http://github.com/toolbits/boost_1_53_0_xcode462_universal
+mv [clang-darwin.jam] boost_1_53_0/.
 cd boost_1_53_0
 
 patch -up0 < patch-libs-context-130308-0.diff
 mv Jamfile.v2 libs/context/build/.
+mv clang-darwin.jam tools/build/v2/tools/.
 
 
 
@@ -35,3 +38,10 @@ sudo mkdir /usr/local/boost_gcc/lib/a
 sudo mkdir /usr/local/boost_gcc/lib/dylib
 sudo mv /usr/local/boost_gcc/lib/*.a /usr/local/boost_gcc/lib/a/.
 sudo mv /usr/local/boost_gcc/lib/*.dylib /usr/local/boost_gcc/lib/dylib/.
+
+
+
+### cpp-netlib with gcc
+BOOST_INCLUDEDIR=/usr/local/boost_gcc/include; export BOOST_INCLUDEDIR
+BOOST_LIBRARYDIR=/usr/local/boost_gcc/lib/a; export BOOST_LIBRARYDIR
+cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ .

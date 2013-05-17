@@ -10,16 +10,20 @@ I'm glad if someone tests everything and posts this to boost's official.<br/>
 
 
 ### apply a patch
-###from https://svn.boost.org/trac/boost/ticket/8266
+### from https://svn.boost.org/trac/boost/ticket/8266
 mv [patch-libs-context-130308-0.diff] boost_1_53_0/.
 
-###from http://github.com/toolbits/boost_1_53_0_xcode462_universal
+### from http://github.com/toolbits/boost_1_53_0_xcode462_universal
 mv [Jamfile.v2] boost_1_53_0/.
+
+### from http://github.com/toolbits/boost_1_53_0_xcode462_universal
+mv [clang-darwin.jam] boost_1_53_0/.
 
 cd boost_1_53_0
 
 patch -up0 < patch-libs-context-130308-0.diff<br/>
 mv Jamfile.v2 libs/context/build/.
+mv clang-darwin.jam tools/build/v2/tools/.
 
 
 
